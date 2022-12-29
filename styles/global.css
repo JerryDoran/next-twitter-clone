@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+body {
+  font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
+    'Arial', sans-serif;
+  background-color: black;
+  color: #fff;
+}
+
+@layer components {
+  .hoverEffect {
+    @apply cursor-pointer transition hover:bg-gray-800 rounded-full w-[52px] xl:w-auto xl:h-auto h-[52px] xl:p-3;
+  }
+}
