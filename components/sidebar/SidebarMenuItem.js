@@ -1,9 +1,20 @@
-export default function SidebarMenuItem({ text, Icon, active }) {
+export default function SidebarMenuItem({
+  text,
+  Icon,
+  active,
+  className,
+  onClick,
+}) {
   return (
-    <div className='hoverEffect flex items-center justify-center xl:justify-start text-gray-400 text-lg space-x-3'>
-      <Icon className='h-7' />
+    <div
+      className='hoverEffect flex items-center justify-center xl:justify-start text-gray-400 text-lg space-x-3'
+      onClick={onClick}
+    >
+      <Icon className={className} />
       <span
-        className={`${active && 'font-bold text-gray-200'} hidden xl:inline`}
+        className={`${
+          active && 'font-bold dark:text-gray-100'
+        } hidden xl:inline dark:text-gray-400 text-gray-700`}
       >
         {text}
       </span>

@@ -26,6 +26,6 @@ body {
 
 @layer components {
   .hoverEffect {
-    @apply cursor-pointer transition hover:bg-gray-800 rounded-full w-[52px] xl:w-auto xl:h-auto h-[52px] xl:p-3;
+    @apply cursor-pointer transition dark:hover:bg-gray-800 hover:bg-gray-200 rounded-full w-[52px] xl:w-auto xl:h-auto h-[52px] xl:p-3;
   }
 }

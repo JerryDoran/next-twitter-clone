@@ -4,7 +4,7 @@ import Sidebar from '../components/sidebar/Sidebar';
 
 export default function HomePage() {
   return (
-    <div>
+    <div className='dark:bg-black dark:text-gray-300 text-gray-800 bg-gray-100 h-screen relative'>
       <Head>
         <title>Twitter Clone</title>
         <meta name='description' content='A Twitter Clone Demo App' />

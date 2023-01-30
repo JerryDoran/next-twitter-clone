@@ -24,11 +24,11 @@ export default function MyFeed() {
     },
   ];
   return (
-    <div className='xl:ml-[370px] border-gray-700 border-l border-r xl:min-w-[576px] sm:ml-[73px] flex-grow max-w-xl'>
-      <div className='flex justify-between items-center py-3 px-5 sticky top-0 z-50 bg-black border-b border-gray-700'>
-        <h2 className='text-lg sm:text-xl font-bold cursor-pointer'>Home</h2>
+    <div className='xl:ml-[370px] border-gray-300 border-l border-r xl:min-w-[576px] sm:ml-[73px] flex-grow max-w-xl'>
+      <div className='flex justify-between items-center py-3 px-5 sticky top-0 z-50 border-b border-gray-700'>
+        <h2 className='text-lg sm:text-xl font-bold cursor-pointer '>Home</h2>
         <div className='cursor-pointer hover:bg-gray-800 w-10 h-10 flex items-center justify-center rounded-full'>
-          <SparklesIcon className='h-5' />
+          <SparklesIcon className='h-5 ' />
         </div>
       </div>
       <Input />
