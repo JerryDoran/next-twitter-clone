@@ -2,18 +2,18 @@ import { EmojiHappyIcon, PhotographIcon } from '@heroicons/react/outline';
 
 export default function Input() {
   return (
-    <div className='flex border-b border-gray-700 p-3 space-x-3'>
+    <div className='flex border-b dark:border-gray-700 p-3 space-x-3'>
       <img
         src='https://avatarfiles.alphacoders.com/295/thumb-295023.jpg'
         alt='user-image'
         className='h-10 w-10 rounded-full cursor-pointer hover:brightness-95'
       />
-      <div className='w-full divide-y divide-gray-700'>
+      <div className='w-full divide-y dark:divide-gray-700'>
         <div className=''>
           <textarea
             rows='2'
             placeholder="What's happening?"
-            className='bg-transparent w-full border-none focus:ring-0 placeholder-gray-500 text-gray-300 tracking-wide min-h-[50px]'
+            className='bg-transparent w-full border-none focus:ring-0 placeholder-gray-500 tracking-wide min-h-[50px]'
           ></textarea>
         </div>
         <div className='flex items-center justify-between pt-2.5'>

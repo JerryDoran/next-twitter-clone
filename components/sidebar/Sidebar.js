@@ -11,11 +11,10 @@ import {
   DotsCircleHorizontalIcon,
   DotsHorizontalIcon,
 } from '@heroicons/react/outline';
-import useColorMode from '../../hooks/useColorMode';
+
 import { MoonIcon, SunIcon } from '@heroicons/react/solid';
 
-export default function Sidebar() {
-  const [colorMode, setColorMode] = useColorMode();
+export default function Sidebar({ theme, setTheme }) {
   return (
     <div className='p-3 hidden sm:flex flex-col xl:items-start fixed h-full'>
       <div className='hoverEffect p-0 hover:bg-blue-100 xl:px-1 xl:pt-1 flex items-center justify-center'>
@@ -72,30 +71,20 @@ export default function Sidebar() {
         Tweet
       </button>
       <div className='absolute bottom-40 flex align-center'>
-        {colorMode === 'dark' ? (
+        {theme === 'dark' ? (
           <SidebarMenuItem
             text='Light Mode'
             Icon={SunIcon}
-            className='w-9 h-9 text-yellow-500 transition p-1.5 rounded '
-            onClick={() => setColorMode('light')}
+            className='w-9 h-9 text-yellow-500 transition p-1 rounded '
+            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
           />
         ) : (
-          /* <SunIcon
-            className='w-9 h-9 text-yellow-500 transition p-1.5 rounded hover:bg-slate-700'
-            role='button'
-            onClick={() => setColorMode('light')}
-          /> */
           <SidebarMenuItem
             text='Dark Mode'
             Icon={MoonIcon}
-            className='w-9 h-9 p-1.5 text-gray-800 transition rounded '
-            onClick={() => setColorMode('dark')}
+            className='w-9 h-9 p-1 text-gray-800 transition rounded '
+            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
           />
-          /* <MoonIcon
-            className='w-9 h-9 p-1.5 transition rounded hover:bg-slate-100'
-            role='button'
-            onClick={() => setColorMode('dark')}
-          /> */
         )}
       </div>
       <div className=' text-gray-400 mt-auto flex items-center justify-center xl:justify-start'>
