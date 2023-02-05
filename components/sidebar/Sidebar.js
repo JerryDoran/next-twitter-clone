@@ -16,7 +16,7 @@ import { MoonIcon, SunIcon } from '@heroicons/react/solid';
 
 export default function Sidebar({ theme, setTheme }) {
   return (
-    <div className='p-3 hidden sm:flex flex-col xl:items-start fixed h-full'>
+    <div className='p-3 hidden sm:flex flex-col xl:items-start fixed h-full xl:ml-24'>
       <div className='hoverEffect p-0 hover:bg-blue-100 xl:px-1 xl:pt-1 flex items-center justify-center'>
         <Image
           src='https://help.twitter.com/content/dam/help-twitter/brand/logo.png'

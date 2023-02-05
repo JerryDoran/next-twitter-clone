@@ -48,15 +48,15 @@ export default function Post({ post }) {
         {/* ICONS */}
         <div className='flex justify-between text-gray-500 p-2'>
           <div>
-            <ChatIcon className='h-9' />
+            <ChatIcon className='h-9 w-9 hoverEffect p-2 hover:text-sky-500 hover:bg-sky-100' />
           </div>
-          <TrashIcon className='h-9' />
+          <TrashIcon className='h-9 w-9 hoverEffect p-2 hover:text-red-600 hover:bg-red-100' />
           <div>
-            <HeartIcon className='h-9' />
+            <HeartIcon className='h-9 w-9 hoverEffect p-2 hover:text-red-600 hover:bg-red-100' />
           </div>
 
-          <ShareIcon className='h-9' />
-          <ChartBarIcon className='h-9' />
+          <ShareIcon className='h-9 w-9 hoverEffect p-2 hover:text-sky-500 hover:bg-sky-100' />
+          <ChartBarIcon className='h-9 w-9 hoverEffect p-2 hover:text-sky-500 hover:bg-sky-100' />
         </div>
       </div>
     </div>
