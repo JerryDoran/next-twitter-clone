@@ -5,6 +5,7 @@ import News from './News';
 export default function Widgets({ newsResults, randomUsersResults }) {
   const [articleNum, setArticleNum] = useState(3);
   const [randomUserNum, setRandomUserNum] = useState(3);
+  
   return (
     <div className='xl:w-[600px] hidden lg:inline ml-8 space-y-5'>
       <div className='w-[90%] xl:w-[75%] sticky top-0 bg-white dark:bg-black py-1.5 z-50'>
