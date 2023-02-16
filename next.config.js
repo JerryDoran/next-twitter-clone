@@ -6,6 +6,7 @@ const nextConfig = {
       'help.twitter.com',
       'avatarfiles.alphacoders.com',
       'images.unsplash.com',
+      'firebasestorage.googleapis.com',
     ],
   },
 };
