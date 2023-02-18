@@ -56,7 +56,9 @@ export default function Post({ post }) {
   async function deletePost() {
     if (window.confirm('Are you sure you want to delete this post?')) {
       await deleteDoc(doc(db, 'posts', post.id));
-      await deleteObject(ref(storage, `posts/${post.id}/images`));
+      if (post.data().image) {
+        await deleteObject(ref(storage, `posts/${post.id}/images`));
+      }
     }
   }
 
@@ -90,14 +92,16 @@ export default function Post({ post }) {
         <p className='text-[15px] sm:text-[16px] mb-2'>{post?.data()?.text}</p>
 
         {/* POST IMAGE */}
-        <Image
-          src={post?.data()?.image}
-          width={600}
-          height={400}
-          alt='post-image'
-          objectFit='cover'
-          className='rounded-2xl mr-2'
-        />
+        {post?.data()?.image && (
+          <Image
+            src={post?.data()?.image}
+            width={600}
+            height={400}
+            alt='post-image'
+            objectFit='cover'
+            className='rounded-2xl mr-2'
+          />
+        )}
 
         {/* ICONS */}
         <div className='flex justify-between text-gray-500 p-2'>
