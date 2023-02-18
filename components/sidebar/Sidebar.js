@@ -76,7 +76,7 @@ export default function Sidebar({ theme, setTheme }) {
       </div>
       {session ? (
         <>
-          <button className='bg-blue-400 rounded-full w-56 h-12 font-bold shadow-md text-lg transition hover:brightness-90 tracking-wider hidden xl:inline'>
+          <button className='bg-blue-400 text-white rounded-full w-56 h-12 font-bold shadow-md text-lg transition hover:brightness-90 tracking-wider hidden xl:inline'>
             Tweet
           </button>
           <div className='absolute bottom-40 flex align-center'>
