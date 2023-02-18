@@ -4,6 +4,7 @@ import Sidebar from '../components/sidebar/Sidebar';
 import { useTheme } from 'next-themes';
 import { useState, useEffect } from 'react';
 import Widgets from '../components/widgets/Widgets';
+import CommentModal from '../components/modal/CommentModal';
 
 export default function HomePage({ newsResults, randomUsersResults }) {
   const [mounted, setMounted] = useState(false);
@@ -28,6 +29,7 @@ export default function HomePage({ newsResults, randomUsersResults }) {
           newsResults={newsResults.articles}
           randomUsersResults={randomUsersResults?.results}
         />
+        <CommentModal />
       </main>
     </div>
   );

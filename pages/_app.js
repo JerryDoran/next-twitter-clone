@@ -1,6 +1,7 @@
 import '../styles/global.css';
 import { ThemeProvider } from 'next-themes';
 import { SessionProvider } from 'next-auth/react';
+import { RecoilRoot } from 'recoil';
 
 export default function MyApp({
   Component,
@@ -9,7 +10,9 @@ export default function MyApp({
   return (
     <ThemeProvider attribute='class'>
       <SessionProvider session={session}>
-        <Component {...pageProps} />
+        <RecoilRoot>
+          <Component {...pageProps} />
+        </RecoilRoot>
       </SessionProvider>
     </ThemeProvider>
   );
