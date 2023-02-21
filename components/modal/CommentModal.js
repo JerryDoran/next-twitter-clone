@@ -45,7 +45,7 @@ export default function CommentModal() {
 
     setOpen(false);
     setInput('');
-    router.push(`posts/${postId}`);
+    router.push(`/posts/${postId}`);
   }
 
   return (
@@ -100,7 +100,7 @@ export default function CommentModal() {
                     placeholder='Tweet your reply'
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    className='bg-transparent w-full border-none focus:ring-0 placeholder-gray-500 tracking-wide min-h-[50px] text-sm'
+                    className='bg-transparent w-full border-none focus:ring-0 placeholder-gray-300 dark:placeholder-gray-600 tracking-wide min-h-[50px] text-sm'
                   ></textarea>
                 </div>
 
