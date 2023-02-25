@@ -4,7 +4,7 @@ import {
   DotsHorizontalIcon,
   HeartIcon,
   ShareIcon,
-  TrashIcon,
+  TrashIcon
 } from '@heroicons/react/outline';
 import { HeartIcon as HeartIconFilled } from '@heroicons/react/solid';
 import {
@@ -12,17 +12,16 @@ import {
   deleteDoc,
   doc,
   onSnapshot,
-  setDoc,
+  setDoc
 } from 'firebase/firestore';
-import Image from 'next/image';
-import Moment from 'react-moment';
-import { db, storage } from '../../firebase.config';
+
 import { signIn, useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { deleteObject, ref } from 'firebase/storage';
+import Moment from 'react-moment';
 import { useRecoilState } from 'recoil';
 import { modalState, postIdState } from '../../atom/modalAtom';
-import { useRouter } from 'next/router';
+import { db } from '../../firebase.config';
 
 export default function Comment({ comment, commentId, originalPostId }) {
   const { data: session } = useSession();
