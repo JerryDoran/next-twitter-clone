@@ -102,11 +102,17 @@ export default function Post({ post, id }) {
         </div>
 
         {/* POST TEXT */}
-        <p className='text-[15px] sm:text-[16px] mb-2'>{post?.data()?.text}</p>
+        <p
+          onClick={() => router.push(`/posts/${id}`)}
+          className='text-[15px] sm:text-[16px] mb-2'
+        >
+          {post?.data()?.text}
+        </p>
 
         {/* POST IMAGE */}
         {post?.data()?.image && (
           <Image
+            onClick={() => router.push(`/posts/${id}`)}
             src={post?.data()?.image}
             width={600}
             height={400}
