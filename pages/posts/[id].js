@@ -7,26 +7,42 @@ import Widgets from '../../components/widgets/Widgets';
 import CommentModal from '../../components/modal/CommentModal';
 import Post from '../../components/feed/Post';
 import { ArrowLeftIcon } from '@heroicons/react/solid';
-import { doc, onSnapshot } from 'firebase/firestore';
+import {
+  collection,
+  doc,
+  onSnapshot,
+  orderBy,
+  query,
+} from 'firebase/firestore';
 import { db } from '../../firebase.config';
+import Comment from '../../components/comment/Comment';
 
 export default function PostPage({ newsResults, randomUsersResults }) {
   const [mounted, setMounted] = useState(false);
   const [post, setPost] = useState(null);
+  const [comments, setComments] = useState([]);
   const { theme, setTheme } = useTheme();
 
   const router = useRouter();
   const { id } = router.query;
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // useEffect(() => {
+  //   setMounted(true);
+  // }, []);
 
   useEffect(() => {
     return onSnapshot(doc(db, 'posts', id), (snapshot) => setPost(snapshot));
   }, [db, id]);
 
-  if (!mounted) return null;
+  // if (!mounted) return null;
+
+  // Get comments of a post
+  useEffect(() => {
+    const colRef = collection(db, 'posts', id, 'comments');
+    return onSnapshot(query(colRef, orderBy('timestamp', 'desc')), (snapshot) =>
+      setComments(snapshot.docs)
+    );
+  }, [db, id]);
 
   return (
     <div className='dark:bg-black dark:text-gray-300 text-gray-800 bg-white h-screen overflow-auto relative'>
@@ -49,6 +65,14 @@ export default function PostPage({ newsResults, randomUsersResults }) {
             </h2>
           </div>
           <Post id={id} post={post} />
+          {comments.length > 0 &&
+            comments.map((comment) => (
+              <Comment
+                key={comment.id}
+                id={comment.id}
+                comment={comment.data()}
+              />
+            ))}
         </div>
         <Widgets
           newsResults={newsResults.articles}
